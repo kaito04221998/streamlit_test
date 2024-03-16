@@ -28,15 +28,16 @@ radio_res = st.radio("以下から選択", ("背景削除", "グレースケー�
 
 
 if (radio_res) == "背景削除":
-
-    input_file = st.file_uploader("Choose a file", type=['.jpg', '.png', '.gif','.tiff','.raw'])
-    print(input_file)
-    if input_file is not None:
-        image = Image.open(input_file)
-        input = np.array(image)
-        rem_image = remove(input)
-        output = Image.fromarray(rem_image)
-        st.image(output, caption="Not back ground image", use_column_width=True)
+    "coming soon..."
+    pass
+    # input_file = st.file_uploader("Choose a file", type=['.jpg', '.png', '.gif','.tiff','.raw'])
+    # print(input_file)
+    # if input_file is not None:
+    #     image = Image.open(input_file)
+    #     input = np.array(image)
+    #     rem_image = remove(input)
+    #     output = Image.fromarray(rem_image)
+    #     st.image(output, caption="Not back ground image", use_column_width=True)
 
 elif (radio_res) == "グレースケール":
     input_file = st.file_uploader("Choose a file", type=['.jpg', '.png', '.gif','.tiff','.raw'])
