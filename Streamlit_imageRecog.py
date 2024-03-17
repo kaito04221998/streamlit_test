@@ -24,8 +24,8 @@ import cv2
 from PIL import Image
 import numpy as np
 
+# ラジオボタン作成
 radio_res = st.radio("以下から選択", ("背景削除", "グレースケール", "ぼやけた画像を選別"))
-
 
 if (radio_res) == "背景削除":
     input_file = st.file_uploader("Choose a file", type=['.jpg', '.png', '.gif','.tiff','.raw'])
