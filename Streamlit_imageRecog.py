@@ -33,9 +33,11 @@ if (radio_res) == "背景削除":
     if input_file is not None:
         image = Image.open(input_file)
         input = np.array(image)
+        # 画像の背景削除
         rem_image = remove(input)
         output = Image.fromarray(rem_image)
-        st.image(output, caption="Not back ground image", use_column_width=True)
+        st.image(output, caption="output", use_column_width=True)
+        st.download_button("Download File")
 
 elif (radio_res) == "グレースケール":
     input_file = st.file_uploader("Choose a file", type=['.jpg', '.png', '.gif','.tiff','.raw'])
@@ -45,7 +47,7 @@ elif (radio_res) == "グレースケール":
         # 画像を白黒に変換
         l_image = image.convert("L")
         
-        st.image(l_image, caption="グレースケール", use_column_width=True)
+        st.image(l_image, caption="output", use_column_width=True)
 
 elif (radio_res) == "ぼやけた画像を選別":
     "coming soon..."
