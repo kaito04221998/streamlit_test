@@ -37,7 +37,7 @@ if (radio_res) == "背景削除":
         rem_image = remove(input)
         output = Image.fromarray(rem_image)
         st.image(output, caption="output", use_column_width=True)
-        st.download_button("Download File")
+        st.download_button(label="Download File",data=output)
 
 elif (radio_res) == "グレースケール":
     input_file = st.file_uploader("Choose a file", type=['.jpg', '.png', '.gif','.tiff','.raw'])
