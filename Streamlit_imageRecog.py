@@ -36,8 +36,9 @@ if (radio_res) == "背景削除":
         # 画像の背景削除
         rem_image = remove(input)
         output = Image.fromarray(rem_image)
+        cv2.imwrite("./data/image.png", output)
         st.image(output, caption="output", use_column_width=True)
-        st.download_button(label="Download File",data=output)
+        st.download_button(label="Download File",data=open("./data/image.png", "br"),file_name="test.png")
 
 elif (radio_res) == "グレースケール":
     input_file = st.file_uploader("Choose a file", type=['.jpg', '.png', '.gif','.tiff','.raw'])
